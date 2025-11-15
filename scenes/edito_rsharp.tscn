@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://djxjt0hni5sf8"]
+
+[node name="EDITORsharp" type="Control" unique_id=71388423]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="VBoxContainer" parent="." unique_id=1618439590]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FoldableContainer" type="FoldableContainer" parent="Control" unique_id=1711634979]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CodeEdit" type="CodeEdit" parent="Control" unique_id=1570727186]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BoxContainer" type="BoxContainer" parent="Control" unique_id=1756695065]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/BoxContainer" unique_id=1358332103]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextEdit" type="TextEdit" parent="Control/BoxContainer/VBoxContainer" unique_id=768609001]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/BoxContainer/VBoxContainer" unique_id=2015379063]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/BoxContainer/VBoxContainer/HBoxContainer" unique_id=83381195]
+layout_mode = 2
+text = ">"
+
+[node name="LineEdit" type="LineEdit" parent="Control/BoxContainer/VBoxContainer/HBoxContainer" unique_id=335731222]
+layout_mode = 2
+size_flags_horizontal = 3
