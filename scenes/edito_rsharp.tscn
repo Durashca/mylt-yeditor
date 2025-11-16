@@ -1,14 +1,78 @@
-[gd_scene format=3 uid="uid://djxjt0hni5sf8"]
+[gd_scene load_steps=2 format=3 uid="uid://djxjt0hni5sf8"]
 
-[node name="EDITORsharp" type="Control" unique_id=71388423]
+[ext_resource type="Script" path="res://scripts/edito_rsharp.py" id="1_dsokp"]
+
+[node name="EDITORsharp" type="Control"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 2
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+use_parent_material = false
+clip_contents = false
+custom_minimum_size = Vector2(0, 0)
+layout_direction = 0
 layout_mode = 3
 anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
+rotation = 0.0
+scale = Vector2(1, 1)
+pivot_offset = Vector2(0, 0)
+size_flags_horizontal = 1
+size_flags_vertical = 1
+size_flags_stretch_ratio = 1.0
+localize_numeral_system = true
+tooltip_text = ""
+tooltip_auto_translate_mode = 0
+focus_neighbor_left = NodePath("")
+focus_neighbor_top = NodePath("")
+focus_neighbor_right = NodePath("")
+focus_neighbor_bottom = NodePath("")
+focus_next = NodePath("")
+focus_previous = NodePath("")
+focus_mode = 0
+focus_behavior_recursive = 0
+mouse_filter = 0
+mouse_behavior_recursive = 0
+mouse_force_pass_scroll_events = true
+mouse_default_cursor_shape = 0
+accessibility_name = ""
+accessibility_description = ""
+accessibility_live = 0
+accessibility_controls_nodes = Array[NodePath]([])
+accessibility_described_by_nodes = Array[NodePath]([])
+accessibility_labeled_by_nodes = Array[NodePath]([])
+accessibility_flow_to_nodes = Array[NodePath]([])
+theme_type_variation = &""
+script = ExtResource("1_dsokp")
 
-[node name="Control" type="VBoxContainer" parent="." unique_id=1618439590]
+[node name="Control" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,33 +80,49 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="FoldableContainer" type="FoldableContainer" parent="Control" unique_id=1711634979]
+[node name="FoldableContainer" type="FoldableContainer" parent="Control"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="CodeEdit" type="CodeEdit" parent="Control" unique_id=1570727186]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/FoldableContainer"]
 layout_mode = 2
-size_flags_vertical = 3
 
-[node name="BoxContainer" type="BoxContainer" parent="Control" unique_id=1756695065]
+[node name="ExitMenuButton" type="Button" parent="Control/FoldableContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 3
+text = "run"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/BoxContainer" unique_id=1358332103]
+[node name="RunButton" type="Button" parent="Control/FoldableContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextEdit" type="TextEdit" parent="Control/BoxContainer/VBoxContainer" unique_id=768609001]
+[node name="SaveButton" type="Button" parent="Control/FoldableContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CodeEdit" type="CodeEdit" parent="Control"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/BoxContainer/VBoxContainer" unique_id=2015379063]
+[node name="BottomBoxContainer" type="BoxContainer" parent="Control"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BottomVBoxContainer" type="VBoxContainer" parent="Control/BottomBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ConsoleTextEdit" type="TextEdit" parent="Control/BottomBoxContainer/BottomVBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="InputHBoxContainer" type="HBoxContainer" parent="Control/BottomBoxContainer/BottomVBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/BoxContainer/VBoxContainer/HBoxContainer" unique_id=83381195]
+[node name="BracketAngularLabel" type="Label" parent="Control/BottomBoxContainer/BottomVBoxContainer/InputHBoxContainer"]
 layout_mode = 2
 text = ">"
 
-[node name="LineEdit" type="LineEdit" parent="Control/BoxContainer/VBoxContainer/HBoxContainer" unique_id=335731222]
+[node name="InputLineEdit" type="LineEdit" parent="Control/BottomBoxContainer/BottomVBoxContainer/InputHBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
